@@ -9,8 +9,9 @@ open my $outfh,'>',$output or die $!;
 while (my $line=<$fh>) {
 	# body...
 	chomp $line;
-	$line =~ s/^\t([^\t\n])/- $1/g;
-	$line =~ s/^(\t+)\t([^\t\n])/$1- $2/g;
+	$line =~ s/^\t([^\t\n])/## $1/g;
+	$line =~ s/^\t\t([^\n])/\t$1/g;
+	$line =~ s/^(\t*)\t([^\t\n])/$1- $2/g;
 	print $outfh "$line\n";
 }
 close $fh;
