@@ -3,6 +3,7 @@ from Bio import SeqIO
 import sys
 
 #please make sure that no space in the seq.id
+#usage: ./get_longest_transcript.py origin.fa > out.fa
 
 lastGene = None
 longest = (None, None)
